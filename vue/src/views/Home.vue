@@ -10,7 +10,6 @@ export default {
   components: {
   },
   setup(props,content){
-
     console.log(props,content)
   }
 }
