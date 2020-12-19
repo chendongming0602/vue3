@@ -28,13 +28,13 @@ export default {
                 let res=await login();
                 this.$store.commit(TOKEN,res.token);
                 this.$store.commit(TIME,new Date().getTime());
-                ElMessage.success({message:"登录成功"})
+                ElMessage.success({message:"登录成功"});
+                this.$router.push("/")
             }catch(err){
                 ElMessage.error('登录出错');
             }
             // this.$router.push("/")
         }
-        console.log(state)
         return {
             state,
             submit
