@@ -1,13 +1,7 @@
 <template>
   <div class="home">
     我是首页
-    <div class="box">
-      <div>核销码</div>
-      <input type="text" placeholder="请输入核销码">
-      <div>密码</div>
-      <input type="text" placeholder="请输入核销密码">
-    </div>
-    <!-- <router-view/> -->
+    <router-view/>
   </div>
 </template>
 <style>

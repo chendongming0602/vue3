@@ -85,5 +85,14 @@ export const judge = [
                 }
             }
         ]
+    },
+    {
+        path: '/order',
+        component: "Order",
+        name: 'order-manage',
+        meta: {
+            name: '拉拉',
+            icon: 'icon-email'
+        }
     }
 ]

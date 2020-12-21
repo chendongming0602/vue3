@@ -10,7 +10,7 @@ const routes = [
       {
         path:"/nav",
         name:"nav",
-        component:()=>import("@/components/nav/nav.vue")
+        component:()=>import("@/views/nav/left.vue")
       }
     ]
   },
