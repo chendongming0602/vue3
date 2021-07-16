@@ -36,8 +36,6 @@ export default defineComponent({
         });
         let router=useRouter();
         let gotoRoute=(name:any)=>{
-
-            console.log(name)
             router.push({ name })
         }
         return {

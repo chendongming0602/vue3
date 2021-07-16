@@ -1,16 +1,17 @@
 <template>
     <div class="main-container">
         <aside class="aside__top">
-            <span
+            <!-- <span
                 class="iconfont icon-nav toggleNavCollapse"
-                :class="{ active: false }"
+                :class="{ active: state.isSidebarNavCollapse }"
                 @click="toggleNavCollapse"
             >
-            </span>
+            </span> -->
             <el-breadcrumb separator="/">
                 <transition-group name="breadcrumb">
                     <!-- 防止面包屑导航出现 首页/首页， v-if="route.name!='home'" -->
                     <el-breadcrumb-item
+                          
                         v-for="(route, i) in state.crumbList"
                         :key="route.name"
                         :to="{ name: route.name }"
@@ -18,7 +19,7 @@
                             'is-last-link': i == state.crumbList.length - 1,
                         }"
                     >
-                        {{ route.meta.name }}
+                    <span  v-if="route.name!='home'" >{{ route.meta.name }}</span>
                     </el-breadcrumb-item>
                 </transition-group>
             </el-breadcrumb>
@@ -28,7 +29,7 @@
                 </div>
                 <div class="user-msg">
                     <!-- <img class="user-img" :src="require('@/assets/image/a.png')" alt=""> -->
-                    <span class="user-name">Lily-叶</span>
+                    <span class="user-name">小明出品</span>
                     <el-dropdown>
                         <i class="el-icon-arrow-down el-icon--right"></i>
                         <template #dropdown>
@@ -50,31 +51,28 @@
     </div>
 </template>
 <script lang="ts">
-import { defineComponent, reactive } from "vue";
+import { computed, defineComponent, reactive } from "vue";
+import { useRouter } from "vue-router";
+import {useStore} from "vuex";
 
 export default defineComponent({
     setup() {
+        const store=useStore();
+        const router=useRouter();
         let state: any = reactive({
-            crumbList: [
-                {
-                    name: "login",
-                    meta: {
-                        name: "首页",
-                        icon: "icon-quit",
-                    },
-                },
-                {
-                    name: "admin",
-                    meta: {
-                        name: "管理",
-                        icon: "icon-quit",
-                    },
-                },
-            ],
+            crumbList:computed(()=>store.getters.getCrumbList),
+            isSidebarNavCollapse: computed(()=>store.getters.getIsSidebarNavCollapse)
         });
-
+        let toggleNavCollapse=()=>{
+            store.commit("toggleNavCollapse")
+        }
+        let loginOut=()=>{
+            window.localStorage.removeItem("token");
+            router.push({path:"/login"})
+        }
         return {
             state,
+            loginOut
         };
     },
 });

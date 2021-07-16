@@ -1,6 +1,9 @@
-import permissionList from "@/utils/login";
+// 后端路由
+import permissionList from "@/utils/permission";
+//本地路由
 import dynamicRoutes from "@/router/dynamic-router";
 import {recursionRouter,setDefaultRoute} from "@/utils/recursion-router";
+//固定路由
 import router, { DynamicRoutes } from '@/router/index';
 const actions={
     async FETCH_PERMISSION({commit}:any){
@@ -25,7 +28,7 @@ const actions={
         setDefaultRoute([MainContainer]);
         /*  初始路由 */
         let initialRoutes = router.options.routes;
-        console.log(DynamicRoutes)
+        // console.log(DynamicRoutes)
         
         router.addRoute(DynamicRoutes[0]);
          /* 完整的路由表 */

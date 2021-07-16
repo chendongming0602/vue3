@@ -1,3 +1,6 @@
+
+// 模拟后端给的权限路由
+//通过type值与本地所有路由进行对比
 const permissionList=[
     {
         "name": "订单管理",
