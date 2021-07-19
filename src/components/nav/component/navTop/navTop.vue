@@ -29,13 +29,13 @@
                 </div>
                 <div class="user-msg">
                     <!-- <img class="user-img" :src="require('@/assets/image/a.png')" alt=""> -->
-                    <span class="user-name">小明出品</span>
+                    <span class="user-name">{{$t("name")}}</span>
                     <el-dropdown>
                         <i class="el-icon-arrow-down el-icon--right"></i>
                         <template #dropdown>
                             <el-dropdown-menu>
-                                <el-dropdown-item>个人中心</el-dropdown-item>
-                                <el-dropdown-item>修改密码</el-dropdown-item>
+                                <el-dropdown-item>{{$t("navMy")}}</el-dropdown-item>
+                                <el-dropdown-item>{{$t("pwd")}}</el-dropdown-item>
                             </el-dropdown-menu>
                         </template>
                     </el-dropdown>

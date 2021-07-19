@@ -1,6 +1,6 @@
 <template>
     <div :class="{navCollapsed:state.isSidebarNavCollapse}">
-        <NAVLEFT class="sidebar"></NAVLEFT>
+        <NAVLEFT class="sidebar theme-bg"></NAVLEFT>
         <NAVTOP ></NAVTOP>
     </div>
 </template>

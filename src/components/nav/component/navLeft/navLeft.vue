@@ -2,10 +2,12 @@
     <div>
         <el-menu
             :collapse="false"
-            background-color="#304156"
+
             text-color="#eee"
             active-text-color="#4dbcff"
             :default-active="state.currentMenu"
+            class="theme-bg"
+            id="menu"
         >
             <MENU :menuList="state.sidebarMenu"></MENU>
         </el-menu>

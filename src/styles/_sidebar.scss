@@ -19,9 +19,9 @@
     >div.menu-container>li.el-submenu>.el-submenu__title {
         border-bottom: 1px solid rgba(238, 238, 238, 0.1);
     }
-    .el-menu-item {
-        background: #304156 !important;
-    }
+    // .el-menu-item {
+    //     background: inherit !important;
+    // }
     /* 菜单hover时的背景 */
     .el-submenu__title:hover,
     .el-menu-item:hover {
