@@ -68,6 +68,7 @@ export default defineComponent({
         }
         let loginOut=()=>{
             window.localStorage.removeItem("token");
+            
             router.push({path:"/login"})
         }
         return {

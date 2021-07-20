@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHashHistory, RouteRecordRaw ,} from "vue-router";
 import store from "@/store/index";
 const routes: Array<RouteRecordRaw> = [
     {
@@ -12,6 +12,7 @@ const router = createRouter({
     history: createWebHashHistory(),
     routes,
 });
+
 router.beforeEach((to: any, from: any, next: any) => {
     if (!window.localStorage.getItem("token") && to.path !== "/login") {
         return next({ path: "/login" });
@@ -37,6 +38,7 @@ router.afterEach((to: any, from: any, next: any) => {
     //目前左边导航选中的active
     store.commit("SET_CURRENT_MENU", to.name);
 });
+  
 /* 固定的路由 */
 export const DynamicRoutes = [
     {
@@ -84,6 +86,64 @@ export const DynamicRoutes = [
                     name: "国际化",
                     icon: "el-icon-s-flag",
                 },
+            },
+            {
+                path: "icon",
+                component: import("@/views/icon/index.vue"),
+                name: "icon",
+                meta: {
+                    name: "图标管理",
+                    icon: "el-icon-picture-outline-round",
+                },
+                children:[
+                    {
+                        path: "elicon",
+                        component: import("@/views/icon/el-icon.vue"),
+                        name: "elicon",
+                        meta: {
+                            name: "Element图标",
+                            icon: "el-icon-caret-bottom",
+                        },
+                    },
+                    {
+                        path: "aliicon",
+                        component: import("@/views/icon/ali-icon.vue"),
+                        name: "aliicon",
+                        meta: {
+                            name: "阿里图标",
+                            icon: "el-icon-caret-top",
+                        },
+                    }
+                ]
+            },
+            {
+                path: "table",
+                component: import("@/views/table/index.vue"),
+                name: "table",
+                meta: {
+                    name: "表格管理",
+                    icon: "el-icon-s-grid",
+                },
+                children:[
+                    {
+                        path: "basics",
+                        component: import("@/views/table/basics.vue"),
+                        name: "basics",
+                        meta: {
+                            name: "基础表格",
+                            icon: "el-icon-menu",
+                        },
+                    },
+                    {
+                        path: "complex",
+                        component: import("@/views/table/complex.vue"),
+                        name: "complex",
+                        meta: {
+                            name: "复杂表格",
+                            icon: "el-icon-s-grid",
+                        },
+                    }
+                ]
             },
         ],
     },

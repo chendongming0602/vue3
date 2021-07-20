@@ -32,9 +32,13 @@
 import { defineComponent } from 'vue'
 import {loginApi} from "@/api/login";
 import { useRouter } from 'vue-router';
+import {useStore} from "vuex";
 export default defineComponent({
     setup() {
         let router=useRouter();
+        let store=useStore();
+        //重新触发路由
+        store.commit("SET_PERMISSION",null);
         let  login =async ()=>{
             router.push({path:"/"});
             window.localStorage.setItem("token","is token");

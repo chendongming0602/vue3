@@ -1,6 +1,6 @@
 const messages={
     "zh-CN":{
-        title:"中文语音包",
+        title:"中文",
         name:"小明出品",
         navMy:"个人中心",
         pwd:"修改密码",
@@ -9,7 +9,7 @@ const messages={
         btnEn:"切换英文"
     },
     "en-US":{
-        title:"English Voice",
+        title:"English",
         name:"Xiao Ming",
         navMy:"Personal",
         pwd:"Change Password",

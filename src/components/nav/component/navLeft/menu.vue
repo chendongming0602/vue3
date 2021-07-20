@@ -3,7 +3,7 @@
         <template v-for="v in state.menuList" >
             <el-submenu :index="v.name" v-if="v.children&&v.children.length>0" :key="v.name"  class="theme-bg">
                 <template v-slot:title>
-                    <i class="iconfont" :class="v.meta.icon"></i>
+                    <i class="iconfont theme-color" :class="v.meta.icon"></i>
                     <span class="theme-color">{{v.meta.name}}</span>
                 </template>
                 <el-menu-item-group>
@@ -11,7 +11,7 @@
                 </el-menu-item-group>
             </el-submenu>
             <el-menu-item :key="v.name" :index="v.name" @click="gotoRoute(v.name)" v-else  class="theme-bg">
-                <i class="iconfont" :class="v.meta.icon"></i>
+                <i class="iconfont theme-color" :class="v.meta.icon"></i>
                 <span class="theme-color">{{v.meta.name}}</span>
             </el-menu-item>
         </template>
