@@ -145,6 +145,44 @@ export const DynamicRoutes = [
                     }
                 ]
             },
+            {
+                path: "chart",
+                component: import("@/views/chart/index.vue"),
+                name: "chart",
+                meta: {
+                    name: "图表示例",
+                    icon: "el-icon-s-data",
+                },
+                children:[
+                    {
+                        path: "column",
+                        component: import("@/views/chart/column.vue"),
+                        name: "column",
+                        meta: {
+                            name: "柱形图表",
+                            icon: "el-icon-s-data",
+                        },
+                    },
+                    {
+                        path: "line",
+                        component: import("@/views/chart/line.vue"),
+                        name: "line",
+                        meta: {
+                            name: "折线图表",
+                            icon: "el-icon-minus",
+                        },
+                    },
+                    {
+                        path: "more",
+                        component: import("@/views/chart/more.vue"),
+                        name: "more",
+                        meta: {
+                            name: "其他图表",
+                            icon: "el-icon-s-operation",
+                        },
+                    },
+                ]
+            },
         ],
     },
 ];

@@ -9,7 +9,7 @@
         <div class="hint-title">使用说明：</div>
         <div class="hint">
             <div>1、进入阿里巴巴图标库进行选择自己图标，并且复制图标的svg代码《<a href="https://www.iconfont.cn/" target="_blank" rel="noopener noreferrer">点击进入阿里巴巴图标库</a> 》</div>
-            <div>2、在@/assets/icons中创建后缀：.svg文件，将复制的svg代码粘贴进行（文件名请使用英文）</div>
+            <div>2、在@/assets/icons中创建后缀：.svg文件，将复制的svg代码粘贴进去（文件名请使用英文）</div>
             <div>3、在需要使用的页面中：</div>
             <div class="code-editor"><codeEditor v-model:value="state.code" scene="look" ></codeEditor></div>
             <div>属性name对应@/assets/icons中创建的文件名</div>
