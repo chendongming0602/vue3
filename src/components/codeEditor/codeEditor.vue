@@ -1,6 +1,6 @@
 <template>
   <div class="in-coder-panel">
-    <textarea ref="textarea" v-model="code"></textarea>
+    <textarea ref="textarea"  v-model="code"></textarea>
   </div>
 </template>
 
@@ -114,6 +114,7 @@
     flex-grow: 1;
     display: flex;
     position: relative;
+    // overflow: hidden;
     .CodeMirror {
       flex-grow: 1;
       text-align: left !important;

@@ -4,3 +4,10 @@ export const loginApi=()=>{
         path:"/users"
     })
 }
+export const upApi=(data:any)=>{
+    return axios({
+        path:"/users",
+        method:"POST",
+        data
+    })
+}

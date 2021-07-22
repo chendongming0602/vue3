@@ -4,19 +4,19 @@
 const permissionList=[
     {
         "name": "订单管理",
-        type:"order",
+        "type":"order",
         "children": [
             {
                 "name": "订单列表",
-                type:"orderList",
+                "type":"orderList",
             },
             {
                 "name": "生产管理",
-                type:"production",
+                "type":"production",
                 "children": [
                     {
                         "name": "生产列表",
-                        type:"productionList",
+                        "type":"productionList",
                     }
                 ]
             }
@@ -24,17 +24,17 @@ const permissionList=[
     },
     {
         "name": "产品管理",
-        type:"cproduct",
+        "type":"cproduct",
         "children": [
             {
                 "name": "产品列表",
-                type:"cproductList",
+                "type":"cproductList",
             }
         ]
     },
     {
         "name": "统计",
-        type:"statistics",
+        "type":"statistics",
        
     }
 ]

@@ -1,7 +1,7 @@
 const messages={
     "zh-CN":{
         title:"中文",
-        name:"小明出品",
+        name:"小明",
         navMy:"个人中心",
         pwd:"修改密码",
         hint:"欢迎使用小明开源的：vue3.0-admin",

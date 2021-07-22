@@ -11,7 +11,6 @@
                 <transition-group name="breadcrumb">
                     <!-- 防止面包屑导航出现 首页/首页， v-if="route.name!='home'" -->
                     <el-breadcrumb-item
-                          
                         v-for="(route, i) in state.crumbList"
                         :key="route.name"
                         :to="{ name: route.name }"
@@ -19,23 +18,29 @@
                             'is-last-link': i == state.crumbList.length - 1,
                         }"
                     >
-                    <span  v-if="route.name!='home'" >{{ route.meta.name }}</span>
+                        <span v-if="route.name != 'home'">{{
+                            route.meta.name
+                        }}</span>
                     </el-breadcrumb-item>
                 </transition-group>
             </el-breadcrumb>
             <div class="aside__top--right">
-                <div class="email">
-                    <span class="iconfont icon-email"><i>40</i></span>
+                <div class="email" @click="full">
+                    <span class="el-icon-rank" style="font-size:18px"></span>
                 </div>
                 <div class="user-msg">
                     <!-- <img class="user-img" :src="require('@/assets/image/a.png')" alt=""> -->
-                    <span class="user-name">{{$t("name")}}</span>
+                    <span class="user-name">{{ $t("name") }}</span>
                     <el-dropdown>
                         <i class="el-icon-arrow-down el-icon--right"></i>
                         <template #dropdown>
                             <el-dropdown-menu>
-                                <el-dropdown-item>{{$t("navMy")}}</el-dropdown-item>
-                                <el-dropdown-item>{{$t("pwd")}}</el-dropdown-item>
+                                <el-dropdown-item>{{
+                                    $t("navMy")
+                                }}</el-dropdown-item>
+                                <el-dropdown-item>{{
+                                    $t("pwd")
+                                }}</el-dropdown-item>
                             </el-dropdown-menu>
                         </template>
                     </el-dropdown>
@@ -47,33 +52,38 @@
         </aside>
         <!-- 内容容器 -->
         <router-view class="content"></router-view>
-        
     </div>
 </template>
 <script lang="ts">
 import { computed, defineComponent, reactive } from "vue";
 import { useRouter } from "vue-router";
-import {useStore} from "vuex";
-
+import { useStore } from "vuex";
+import screenfull from "screenfull";
 export default defineComponent({
     setup() {
-        const store=useStore();
-        const router=useRouter();
+        const store = useStore();
+        const router = useRouter();
         let state: any = reactive({
-            crumbList:computed(()=>store.getters.getCrumbList),
-            isSidebarNavCollapse: computed(()=>store.getters.getIsSidebarNavCollapse)
+            crumbList: computed(() => store.getters.getCrumbList),
+            isSidebarNavCollapse: computed(
+                () => store.getters.getIsSidebarNavCollapse
+            ),
         });
-        let toggleNavCollapse=()=>{
-            store.commit("toggleNavCollapse")
-        }
-        let loginOut=()=>{
+        let toggleNavCollapse = () => {
+            store.commit("toggleNavCollapse");
+        };
+        let full = () => {
+           screenfull.isEnabled&&screenfull.toggle()
+        };
+        let loginOut = () => {
             window.localStorage.removeItem("token");
-            
-            router.push({path:"/login"})
-        }
+
+            router.push({ path: "/login" });
+        };
         return {
             state,
-            loginOut
+            loginOut,
+            full,
         };
     },
 });

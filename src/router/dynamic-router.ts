@@ -7,7 +7,7 @@ const dynamicRoutes = [
         component: () => import("@/views/admin/order.vue"),
         name: "order-manage",
         meta: {
-            name: "订单管理",
+            name: "权限路由1",
             icon: "icon-email",
         },
         children: [
@@ -70,7 +70,7 @@ const dynamicRoutes = [
         name: "goods",
         type: "cproduct",
         meta: {
-            name: "产品管理",
+            name: "权限路由2",
 
             icon: "icon-order-manage",
         },
@@ -102,7 +102,7 @@ const dynamicRoutes = [
         type:"statistics",
         component: () => import("@/views/admin/statistics.vue"),
         meta: {
-            name: "统计列表",
+            name: "权限路由3",
             icon: "icon-home",
         },
     },

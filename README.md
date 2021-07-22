@@ -1,19 +1,14 @@
-# vue3.0
+# 一、基于vue3.0+ts+Element通用后台admin模板
 
-## Project setup
-```
-npm install
-```
+# 二、预览地址：[http://www.yknba.cn/pages/index/index.html](http://www.yknba.cn/pages/index/index.html)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+# 三、下载使用：
+> ## 1、安装依赖
+>> ```
+>> npm install
+>> ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+> ## 2、启动项目
+>> ```
+>> npm run dev
+>> ```

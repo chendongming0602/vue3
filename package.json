@@ -11,14 +11,18 @@
     "codemirror": "^5.62.0",
     "echarts": "^5.1.2",
     "element-plus": "^1.0.2-beta.55",
+    "nprogress": "^0.2.0",
+    "screenfull": "^5.1.0",
     "vue": "^3.0.0",
     "vue-i18n": "^9.0.0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0",
     "vxe-table": "^4.0.23",
+    "wangeditor": "^4.7.5",
     "xe-utils": "^3.3.1"
   },
   "devDependencies": {
+    "@types/nprogress": "^0.2.0",
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-typescript": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",

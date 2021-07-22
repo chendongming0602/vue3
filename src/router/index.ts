@@ -1,5 +1,8 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw ,} from "vue-router";
 import store from "@/store/index";
+//进度条
+import NProgress from 'nprogress' ;
+import 'nprogress/nprogress.css';
 const routes: Array<RouteRecordRaw> = [
     {
         path: "/login",
@@ -14,6 +17,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to: any, from: any, next: any) => {
+    NProgress.start();
     if (!window.localStorage.getItem("token") && to.path !== "/login") {
         return next({ path: "/login" });
     }
@@ -26,6 +30,7 @@ router.beforeEach((to: any, from: any, next: any) => {
     }
 });
 router.afterEach((to: any, from: any, next: any) => {
+    NProgress.done();
     try {
         //设置标题
         if (to.meta.name) {
@@ -182,6 +187,33 @@ export const DynamicRoutes = [
                         },
                     },
                 ]
+            },
+            {
+                path: "text",
+                component: import("@/views/text/text.vue"),
+                name: "text",
+                meta: {
+                    name: "富文本编辑器",
+                    icon: "el-icon-document",
+                },
+            },
+            {
+                path: "uploading",
+                component: import("@/views/uploading/uploading.vue"),
+                name: "uploading",
+                meta: {
+                    name: "自定义图片上传",
+                    icon: "el-icon-upload",
+                },
+            },
+            {
+                path: "contact",
+                component: import("@/views/contact/contact.vue"),
+                name: "contact",
+                meta: {
+                    name: "联系我们",
+                    icon: "el-icon-phone",
+                },
             },
         ],
     },
